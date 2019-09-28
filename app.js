@@ -6,14 +6,17 @@ var logger = require('morgan');
 var hbs = require('express-handlebars');
 
 var mongoose = require('mongoose');
-// connect mongoose
-// var mongoDB = 'mongodb+srv://nhom2:mohinhhoanhom2@cluster0-lq7bm.mongodb.net/test?retryWrites=true&w=majority';
-// mongoose.connect(mongoDB, { useNewUrlParser: true });
-// var db = mongoose.connection;
-// db.on('error', console.error.bind(console, 'MongoDB connection error:'));
+mongoose.set('useUnifiedTopology', true);
+//connect mongoose
+var mongoDB = 'mongodb+srv://admin:mohinhhoa@cluster0-zhbh3.mongodb.net/loptap';
+mongoose.connect(mongoDB, { useNewUrlParser: true });
+var db = mongoose.connection;
+db.on('error', console.error.bind(console, 'MongoDB connection error:'));
 
 var dashboardRouter = require('./routes/dashboard');
 var catalogRouter = require('./routes/catalog');
+var adminRouter = require('./routes/admin');
+var userRouter = require('./routes/user');
 
 var app = express();
 
@@ -32,6 +35,8 @@ app.use(express.static(path.join(__dirname, 'public')));
 
 app.use('/', dashboardRouter);
 app.use('/', catalogRouter);
+app.use('/', adminRouter);
+app.use('/', userRouter);
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
