@@ -1,7 +1,7 @@
 var mongoose = require('mongoose');
 mongoose.set('useUnifiedTopology', true);
 //connect mongoose
-var mongoDB = 'mongodb+srv://admin:mohinhhoa@cluster0-zhbh3.mongodb.net/loptap';
+var mongoDB = 'mongodb+srv://nhom2:mohinhhoanhom2@cluster0-lq7bm.mongodb.net/loptap';
 mongoose.connect(mongoDB, { useNewUrlParser: true });
 var db = mongoose.connection;
 db.on('error', console.error.bind(console, 'MongoDB connection error:'));
