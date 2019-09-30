@@ -24,7 +24,47 @@
 
             <!-- Page Content -->
 
-           
+           <!-- Editable table -->
+            <div class="card">
+                <div class="card-body">
+                    <div class="row">
+                        <a href="admins/add"><button type="button" class="btn btn-success">Thêm mới</button></a>
+                    </div>
+                    </br>
+                   
+                    <!-- End mainmenu area -->
+                    <div class="row content">
+                        <div class="panel-body">
+                            <div class="tab-content">
+                                <div role="tabpanel" class="tab-pane active" id="list" style="height: 300px;overflow: auto;">
+                                    <table class="table table-striped table-bordered table-list" id="ta1">
+                                        <thead>
+                                        <tr>
+                                            <th>Tài khoản</th>
+                                            <th>Chức vụ</th>
+                                            <th>Chức năng</th>
+                                        </tr>
+                                        </thead>
+                                        {{#each adminList}}
+                                        <tbody>
+                                        <tr>
+                                            <td>{{this.username}}</td>
+                                            <td>{{this.position}}</td>                                        
+                                            <td>
+                                                <a href="admins/{{this._id}}"><i class ="fa fa-pen"></i></a>
+                                                <a href="admins/delete/{{this._id}}" onclick="return confirm ('Bạn có chắc chắn muốn xóa ?');"><i class="fa fa-trash"></i></a>
+                                            </td>
+                                        </tr>
+                                        </tbody>
+                                        {{/each}}
+                                    </table>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- Editable table -->
 
             <!-- Sticky Footer -->
             <footer class="sticky-footer">
