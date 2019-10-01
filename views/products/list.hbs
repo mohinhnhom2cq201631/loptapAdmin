@@ -34,13 +34,13 @@
                     <div class="row content">
                         <div class="panel-body">
                             <div class="tab-content">
-                                <div role="tabpanel" class="tab-pane active" id="list" style="height: 300px;overflow: auto;">
+                                <br role="tabpanel" class="tab-pane active" id="list" style="height: 300px;overflow: auto;">
                                     <table class="table table-striped table-bordered table-list" id="ta1">
                                         <thead>
                                         <tr>
                                             <th>Tên sản phẩm</th>
                                             <th>Thương hiệu</th>
-                                            <th>Loại laptop</th>
+                                            <th>Thông số</th>
                                             <th>Kích cỡ</th>
                                             <th>Giá</th>
                                             <th>Mô tả</th>
@@ -52,7 +52,11 @@
                                         <tr>
                                             <td>{{this.name}}</td>
                                             <td>{{this.brand.name}}</td>
-                                            <td>{{this.purpose.name}}</td>
+                                            <td id="productComponents">
+                                                {{#each this.components}}
+                                                    {{this.nanme}}
+                                                {{/each}}
+                                            </td>
                                             <td>{{this.size}}</td>
                                             <td>{{this.price}}</td> 
                                             <td>{{this.description}}</td>                                        

@@ -3,7 +3,7 @@ var router = express.Router();
 
 var productController=require('../controllers/productController');
 var brandController=require('../controllers/brandController');
-var purposeController=require('../controllers/purposeController');
+var componentController=require('../controllers/componentController');
 var orderController=require('../controllers/orderController');
 
 
@@ -14,7 +14,7 @@ router.get('/products/list',productController.product_list);
 router.get('/brands/list',brandController.brand_list);
 
 //Brands
-router.get('/purposes/list',purposeController.purpose_list);
+router.get('/components/list',componentController.component_list);
 
 //Orders
 router.get('/orders/list',orderController.order_list);

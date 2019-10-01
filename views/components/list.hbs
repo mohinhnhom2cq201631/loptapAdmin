@@ -27,7 +27,7 @@
             <div class="card">
                 <div class="card-body">
                     <div class="row">
-                        <a href="purposes/add"><button type="button" class="btn btn-success">Thêm mới</button></a>
+                        <a href="components/add"><button type="button" class="btn btn-success">Thêm mới</button></a>
                     </div>
                     </br>
                    
@@ -40,18 +40,20 @@
                                         <thead>
                                         <tr>
                                             <th>Tên loại laptop</th>
+                                            <th>Loại thông số</th>
                                             <th>Mô tả</th>
                                             <th>Chức năng</th>
                                         </tr>
                                         </thead>
-                                        {{#each purposeList}}
+                                        {{#each componentList}}
                                         <tbody>
                                         <tr>
-                                            <td>{{this.name}}</td> 
+                                            <td>{{this.name}}</td>
+                                            <td>{{this.type}}</td>
                                             <td>{{this.description}}</td>                                        
                                             <td>
-                                                <a href="purposes/{{this._id}}"><i class ="fa fa-pen"></i></a>
-                                                <a href="purposes/delete/{{this._id}}" onclick="return confirm ('Bạn có chắc chắn muốn xóa ?');"><i class="fa fa-trash"></i></a>
+                                                <a href="components/{{this._id}}"><i class ="fa fa-pen"></i></a>
+                                                <a href="components/delete/{{this._id}}" onclick="return confirm ('Bạn có chắc chắn muốn xóa ?');"><i class="fa fa-trash"></i></a>
                                             </td>
                                         </tr>
                                         </tbody>
