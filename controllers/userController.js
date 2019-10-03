@@ -11,3 +11,8 @@ exports.user_list = async function (req,res)
         userList: userList
     })
 }
+
+exports.user_add=function(req,res)
+{
+    res.render('users/add',{pageTitle:'Thêm tài khoản'})
+}

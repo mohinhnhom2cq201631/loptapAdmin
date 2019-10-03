@@ -9,3 +9,8 @@ exports.brand_list = async function(req,res){
         brandList: brandList
     });
 };
+
+exports.brand_add= function (req,res)
+{
+    res.render('brands/add',{pageTitle:'Thêm thương hiệu'})
+}

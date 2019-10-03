@@ -11,3 +11,8 @@ exports.product_list = async function (req,res)
         productList: productList
     })
 }
+
+exports.product_add= function(req,res)
+{
+    res.render('products/add', {pageTitle:'Thêm sản phẩm'})
+}
