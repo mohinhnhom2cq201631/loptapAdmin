@@ -114,7 +114,10 @@ mongoose.connect(mongoDB, { useNewUrlParser: true },async function(error) {
         name: 'ASUS TUF FX505DT-AL003T',
         img:'img/Asus TUF FX505DT-AL003T',
         brand: ASUS,
-        components: [Gaming,AMDRyzen73750H,RAM8GB,GTX1650Ti],
+        chip: AMDRyzen73750H,
+        vga: GTX1650Ti,
+        ram: RAM8GB,
+        purpose: Gaming,
         size: 15,
         price: 20990000,
         description:''
