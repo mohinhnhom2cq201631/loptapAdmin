@@ -14,8 +14,10 @@ router.get('/products/add',productController.product_add);
 //Brands
 router.get('/brands/list',brandController.brand_list);
 router.get('/brands/add',brandController.brand_add);
-//Brands
+
+//Components
 router.get('/components/list',componentController.component_list);
+router.get('/components/add',componentController.component_add);
 
 //Orders
 router.get('/orders/list',orderController.order_list);

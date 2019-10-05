@@ -29,7 +29,9 @@
                     <div class="col-sm-12">
                         <form method="POST" action="" enctype="multipart/form-data" class="form-horizontal">
                             <div class="panel panel-success">
-                                <div class="panel-heading" style="font-size: 25px;font-weight: bold; background-color: rgb(28, 188, 156);color: white"> &nbsp; Thêm mới Sản Phẩm</div>
+                                <div class="panel-heading"
+                                    style="font-size: 25px;font-weight: bold; background-color: rgb(28, 188, 156);color: white">
+                                    &nbsp; Thêm mới Sản Phẩm</div>
                                 <div class="row">
                                     <div class="col-md">
                                         <div class="form-group">
@@ -38,30 +40,67 @@
                                                 <input type="text" class="form-control" id="tesp" name="name" required>
                                             </div>
                                         </div>
+                                        <div class="col-md">
+                                            <div class="form-group">
+                                                <label for="category" class="col-md-4 control-label">Thương hiệu</label>
+                                                <select class="col-md-6 form-control" name="category">
+                                                    {{!-- {{#each categories}}
+                                                    <option value={{this._id}}>{{this.name}}</option>
+                                                {{/each}} --}}
+                                                </select>
+                                            </div>
+                                        </div>
+                                         <div class="col-md">
+                                            <div class="form-group">
+                                                <label for="category" class="col-md-4 control-label">Chuyên dùng</label>
+                                                <select class="col-md-6 form-control">
+                                                    {{!-- {{#each categories}}
+                                                    <option value={{this._id}}>{{this.name}}</option>
+                                                {{/each}} --}}
+                                                </select>
+                                            </div>
+                                        </div>
                                         <div class="row">
                                             <div class="col-md">
                                                 <div class="form-group">
                                                     <label for="price" class="col-md-4 control-label">Giá</label>
                                                     <div class="col-md-8">
-                                                        <input type="number" class="form-control" id="kt" name="price" required>
+                                                        <input type="number" class="form-control" id="kt" name="price"
+                                                            required>
                                                     </div>
                                                 </div>
                                             </div>
-                                             
+
                                         </div>
                                     </div>
                                     <div class="col-md-6">
                                         <div class="form-group">
-                                            <label for="category" class="col-md-4 control-label">Thương hiệu</label>
-                                            <select class="col-md-6 form-control" name="category">
-                                                {{!-- {{#each categories}}
+                                            <label for="manufacturer" class="col-md-4 control-label">Size</label>
+                                            <select class="col-md-6 form-control" id="exampleFormControlSelect1">
+                                                {{!-- {{#each manufacturers}}
                                                     <option value={{this._id}}>{{this.name}}</option>
                                                 {{/each}} --}}
                                             </select>
                                         </div>
                                         <div class="form-group">
-                                            <label for="manufacturer" class="col-md-4 control-label">Thông số</label>
-                                            <select class="col-md-6 form-control" id="exampleFormControlSelect1" name="manufacturer">
+                                            <label for="manufacturer" class="col-md-4 control-label">Chip</label>
+                                            <select class="col-md-6 form-control" id="exampleFormControlSelect1">
+                                                {{!-- {{#each manufacturers}}
+                                                    <option value={{this._id}}>{{this.name}}</option>
+                                                {{/each}} --}}
+                                            </select>
+                                        </div>
+                                        <div class="form-group">
+                                            <label for="manufacturer" class="col-md-4 control-label">VGA</label>
+                                            <select class="col-md-6 form-control" id="exampleFormControlSelect1">
+                                                {{!-- {{#each manufacturers}}
+                                                    <option value={{this._id}}>{{this.name}}</option>
+                                                {{/each}} --}}
+                                            </select>
+                                        </div>
+                                        <div class="form-group">
+                                            <label for="manufacturer" class="col-md-4 control-label">Ram</label>
+                                            <select class="col-md-6 form-control" id="exampleFormControlSelect1">
                                                 {{!-- {{#each manufacturers}}
                                                     <option value={{this._id}}>{{this.name}}</option>
                                                 {{/each}} --}}
@@ -80,16 +119,11 @@
                                         <div class="form-group">
                                             <label for="file" class="col-md-4 control-label">Hình Ảnh</label>
                                             <div class="col-md-12">
-                                                <input type="file" accept="image/*" class="form-control" id="file" name="img" required onchange="readURL(this);">
+                                                <input type="file" accept="image/*" class="form-control" id="file"
+                                                    name="img" required onchange="readURL(this);">
                                             </div>
                                             </br>
-                                            <div class="col-md-12">
-                                                <input type="file" accept="image/*" class="form-control" id="file" name="img" required onchange="readURL(this);">
-                                            </div>
-                                            </br>
-                                            <div class="col-md-12">
-                                                <input type="file" accept="image/*" class="form-control" id="file" name="img" required onchange="readURL(this);">
-                                            </div>
+
                                         </div>
                                     </div>
                                 </div>

@@ -9,3 +9,7 @@ exports.component_list = async function(req,res){
         componentList: componentList
     });
 };
+
+exports.component_add = function(req,res) {
+    res.render('components/add', {pageTitle:'Thêm linh kiện'});
+}
