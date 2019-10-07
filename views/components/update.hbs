@@ -29,7 +29,7 @@
                 <input type="hidden" name="_id">
                 <div class="form-group">
                     <label>Tên linh kiện</label>
-                    <input type="text" class="form-control" name="name">
+                    <input type="text" class="form-control" value={{component.name}} name="name">
                 </div>
                 <div class="form-group">
                     <label for="component" class="col-md-4 control-label">Loại linh kiện</label>
@@ -42,7 +42,7 @@
                 </div>
                 <div class="form-group">
                     <label>Mô tả</label>
-                    <input type="textarea" name="description" class="form-control">
+                     <textarea id="mt" cols="110" rows="8" name="description" required>{{component.description}}</textarea>
                 </div>
                 <div class="form-group">
                     <button type="submit" class="btn btn-info"><i class="fa fa-database"></i>{{pageTitle}}</button>

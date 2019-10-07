@@ -30,31 +30,34 @@
                         <a href="brands/add"><button type="button" class="btn btn-success">Thêm mới</button></a>
                     </div>
                     </br>
-                   
+
                     <!-- End mainmenu area -->
 
                     <div class="row content">
                         <div class="panel-body">
                             <div class="tab-content">
-                                <div role="tabpanel" class="tab-pane active" id="list" style="height: 300px;overflow: auto;">
+                                <div role="tabpanel" class="tab-pane active" id="list"
+                                    style="height: 300px;overflow: auto;">
                                     <table class="table table-striped table-bordered table-list" id="ta1">
                                         <thead>
-                                        <tr>
-                                            <th>Tên nhãn hiệu</th>
-                                            <th>Mô tả</th>
-                                            <th>Chức năng</th>
-                                        </tr>
+                                            <tr>
+                                                <th>Tên nhãn hiệu</th>
+                                                <th>Mô tả</th>
+                                                <th>Chức năng</th>
+                                            </tr>
                                         </thead>
                                         {{#each brandList}}
                                         <tbody>
-                                        <tr>
-                                            <td>{{this.name}}</td> 
-                                            <td>{{this.description}}</td>                                        
-                                            <td>
-                                                <a href="brands/{{this._id}}"><i class ="fa fa-pen"></i></a>
-                                                <a href="brands/delete/{{this._id}}" onclick="return confirm ('Bạn có chắc chắn muốn xóa ?');"><i class="fa fa-trash"></i></a>
-                                            </td>
-                                        </tr>
+                                            <tr>
+                                                <td>{{this.name}}</td>
+                                                <td>{{this.description}}</td>
+                                                <td>
+                                                    <a href="brands/update/{{this._id}}"><i class="fa fa-pen"></i></a>
+                                                    <a href="brands/delete/{{this._id}}"
+                                                        onclick="return confirm ('Bạn có chắc chắn muốn xóa ?');"><i
+                                                            class="fa fa-trash"></i></a>
+                                                </td>
+                                            </tr>
                                         </tbody>
                                         {{/each}}
                                     </table>

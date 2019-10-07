@@ -49,19 +49,20 @@
                                         </thead>
                                         {{#each productList}}
                                         <tbody>
-                                        <tr>
+                                        <br>
                                             <td>{{this.name}}</td>
                                             <td>{{this.brand.name}}</td>
-                                            <td id="productComponents">
-                                                {{#each this.components}}
-                                                    {{this.nanme}}
-                                                {{/each}}
+                                            <td>
+                                                {{this.purpose.name}}</br>
+                                                {{this.chip.name}}</br>
+                                                {{this.ram.name}}</br>
+                                                {{this.vga.name}}</br>
                                             </td>
                                             <td>{{this.size}}</td>
                                             <td>{{this.price}}</td> 
                                             <td>{{this.description}}</td>                                        
                                             <td>
-                                                <a href="products/{{this._id}}"><i class ="fa fa-pen"></i></a>
+                                                <a href="products/update/{{this._id}}"><i class ="fa fa-pen"></i></a>
                                                 <a href="products/delete/{{this._id}}" onclick="return confirm ('Bạn có chắc chắn muốn xóa ?');"><i class="fa fa-trash"></i></a>
                                             </td>
                                         </tr>

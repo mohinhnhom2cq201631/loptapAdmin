@@ -26,26 +26,24 @@
 
 
             <form action="" method="POST" class="form-horizontal">
-                <input type="hidden" name="_id">
+                <!--<input type="hidden" name="_id" value="{{manufacturer._id}}">-->
                 <div class="form-group">
-                    <label>Tên linh kiện</label>
-                    <input type="text" class="form-control" name="name">
+                    <label>Tên nhà sản xuất</label>
+                    <input type="text" class="form-control" value={{brand.name}} name="name">
                 </div>
                 <div class="form-group">
-                    <label for="component" class="col-md-4 control-label">Loại linh kiện</label>
-                    <select class="col-md-6 form-control" name="type" id="exampleFormControlSelect1">
-                        <option value="Dòng laptop">Dòng laptop</option>
-                        <option value="Chip">Chip</option>
-                        <option value="RAM">RAM</option>
-                        <option value="VGA">VGA</option>
-                    </select>
+                    <label for="file" class="col-md-4 control-label">Hình Ảnh</label>
+                    <!--<input type="file" accept="image/*" class="form-control" id="file" name="img" required
+                        onchange="readURL(this);">
+                    {{manufacturer.img}}-->
+                    <input name="img" type="text" class="form-control">{{brand.img}}
                 </div>
                 <div class="form-group">
-                    <label>Mô tả</label>
-                    <input type="textarea" name="description" class="form-control">
+                    <label for="description">Mô tả</label>
+                    <textarea id="mt" cols="110" rows="8" name="description" required>{{brand.description}}</textarea>
                 </div>
                 <div class="form-group">
-                    <button type="submit" class="btn btn-info"><i class="fa fa-database"></i>{{pageTitle}}</button>
+                    <button type="submit" class="btn btn-info"><i class="fa fa-database"></i> {{pageTitle}}</button>
                 </div>
             </form>
 

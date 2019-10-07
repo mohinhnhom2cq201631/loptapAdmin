@@ -24,27 +24,29 @@
 
             <!-- Page Content -->
 
-                      
-                      <form action="" method="POST"  class="form-horizontal">
-                          <input type="hidden" name="_id" value="{{manufacturer._id}}">
-                                       <div class="form-group">
-                                           <label>Tên nhà sản xuất</label>
-                                           <input type="text" class="form-control" name="name" value="{{manufacturer.name}}">                                        
-                                       </div>
-                                      <div class="form-group">
-                                                <label for="file" class="col-md-4 control-label">Hình Ảnh</label>
-                                                    <input type="file" accept="image/*" class="form-control" id="file" name="img"  required onchange="readURL(this);">
-                                                    {{manufacturer.img}}
-                                            </div>
-                                           <div class="form-group">
-                                           <label>Mô tả</label>
-                                           <input type="textarea" class="form-control" >                                        
-                                       </div>  
-                                       <div class="form-group">
-                                           <button type="submit" class="btn btn-info"><i class="fa fa-database"></i> {{pageTitle}}</button>                                       
-                                       </div>
-                                    </form>
-                         
+
+            <form action="" method="POST" class="form-horizontal">
+                <!--<input type="hidden" name="_id" value="{{manufacturer._id}}">-->
+                <div class="form-group">
+                    <label>Tên nhà sản xuất</label>
+                    <input type="text" class="form-control" name="name">
+                </div>
+                <div class="form-group">
+                    <label for="file" class="col-md-4 control-label">Hình Ảnh</label>
+                    <!--<input type="file" accept="image/*" class="form-control" id="file" name="img" required
+                        onchange="readURL(this);">
+                    {{manufacturer.img}}-->
+                    <input name="img" type="text" class="form-control">
+                </div>
+                <div class="form-group">
+                    <label>Mô tả</label>
+                    <input type="textarea" name="description" class="form-control">
+                </div>
+                <div class="form-group">
+                    <button type="submit" class="btn btn-info"><i class="fa fa-database"></i> {{pageTitle}}</button>
+                </div>
+            </form>
+
 
         </div>
         <!-- /.container-fluid -->
