@@ -1,3 +1,5 @@
 exports.homepage= function (req,res) {
-    res.reder('dashboard',{pageTitle:'Dashboard'})
+    const name = req.user.username;
+    res.render('dashboard',{pageTitle:'Dashboard',nameAdmin: name,admin: req.admin,
+})
 }
