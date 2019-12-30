@@ -119,3 +119,31 @@ exports.product_update_post = function(req, res) {
 		});
 	});
 };
+
+exports.product_delete = function(req, res) {
+	mongoose.connect(mongoDB, function(error) {
+		if (error) throw error;
+
+		let id = mongoose.Types.ObjectId(req.params.id);
+
+		Product.findOne({ _id: id }, function(err, foundProduct) {
+			if (err) {
+				console.log(err);
+				res.status(500).send();
+			}
+			else {
+				if (!foundProduct) {
+					res.status(404).send();
+				}
+				else {
+					foundProduct.isDeleted = true;
+
+					foundProduct.save(function(err) {
+						if (err) throw err;
+						res.redirect('../list');
+					});
+				}
+			}
+		});
+	});
+};

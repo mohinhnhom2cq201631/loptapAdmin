@@ -71,3 +71,31 @@ exports.component_update_post = function(req, res) {
 		});
 	});
 };
+
+exports.component_delete = function(req, res) {
+	mongoose.connect(mongoDB, function(error) {
+		if (error) throw error;
+
+		let id = mongoose.Types.ObjectId(req.params.id);
+
+		Component.findOne({ _id: id }, function(err, foundComponent) {
+			if (err) {
+				console.log(err);
+				res.status(500).send();
+			}
+			else {
+				if (!foundComponent) {
+					res.status(404).send();
+				}
+				else {
+					foundComponent.isDeleted = true;
+
+					foundComponent.save(function(err) {
+						if (err) throw err;
+						res.redirect('../list');
+					});
+				}
+			}
+		});
+	});
+};

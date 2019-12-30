@@ -71,3 +71,31 @@ exports.brand_update_post = function(req, res) {
 		});
 	});
 };
+
+exports.brand_delete = function(req, res) {
+	mongoose.connect(mongoDB, function(error) {
+		if (error) throw error;
+
+		let id = mongoose.Types.ObjectId(req.params.id);
+
+		Brand.findOne({ _id: id }, function(err, foundBrand) {
+			if (err) {
+				console.log(err);
+				res.status(500).send();
+			}
+			else {
+				if (!foundBrand) {
+					res.status(404).send();
+				}
+				else {
+					foundBrand.isDeleted = true;
+
+					foundBrand.save(function(err) {
+						if (err) throw err;
+						res.redirect('../list');
+					});
+				}
+			}
+		});
+	});
+};
