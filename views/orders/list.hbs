@@ -27,11 +27,7 @@
            <!-- Editable table -->
             <div class="card">
                 <div class="card-body">
-                    <div class="row">
-                        <a href="orders/add"><button type="button" class="btn btn-success">Thêm mới</button></a>
-                    </div>
                     </br>
-                   
                     <!-- End mainmenu area -->
                     <div class="row content">
                         <div class="panel-body">
@@ -55,8 +51,7 @@
                                             <td>{{this.created}}</td>
                                             <td>{{this.status}}</td>                                      
                                             <td>
-                                                <a href="orders/{{this._id}}"><i class ="fa fa-pen"></i></a>
-                                                <a href="orders/delete/{{this._id}}" onclick="return confirm ('Bạn có chắc chắn muốn xóa ?');"><i class="fa fa-trash"></i></a>
+                                                <a href="orders/update/{{this._id}}"><i class ="fa fa-pen"></i></a>
                                             </td>
                                         </tr>
                                         </tbody>

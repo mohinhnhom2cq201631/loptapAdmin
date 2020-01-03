@@ -34,6 +34,8 @@ router.get('/components/delete/:id', ensureAuthenticated,componentController.com
 
 //Orders
 router.get('/orders/list', ensureAuthenticated,orderController.order_list);
+router.get('/orders/update/:id', ensureAuthenticated,orderController.order_update_get);
+router.post('/orders/update/:id', ensureAuthenticated,orderController.order_update_post);
 
 module.exports = router;
 

@@ -11,3 +11,25 @@ exports.order_list = async function (req,res)
         orderList: orderList
     })
 }
+
+exports.order_update_get= async function(req, res){
+    const orderInfo = await orderDAO.get_Order_By_ID(req.params.id);
+
+    res.render('orders/update', { pageTitle: 'Cập nhật đơn hàng',
+        order: orderInfo,
+    });
+
+};
+
+exports.order_update_post = async function(req, res){
+    const orderInfo = await orderDAO.get_Order_By_ID(req.params.id);
+    if(orderInfo == null)
+        res.status(404).send();
+
+    orderInfo.status = req.body.status;
+
+    orderInfo.save(err => {
+        if(err) throw err;
+        res.redirect('../list');
+    });
+};
